@@ -1,0 +1,8 @@
+Berikut ini adalah algoritma dari aplikasi Kanban Board
+
+1. Mulai.
+2. Masukkan rencana ke dalam To Do List.
+3. Jika rencana yang ada di dalam To Do List akan dikerjakan maka dimasukkan ke dalam Doing List.
+4. Jika rencana yang ada didalam Doing List sudah dikerjakan maka akan ada sesi Review.
+5. Jika rencana membutuhkan Review maka akan kembali ke dalam Doing list & jika tidak maka akan dimasukkan ke dalam Done List.
+6. Selesai.
