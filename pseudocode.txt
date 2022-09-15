@@ -1,0 +1,18 @@
+STORE "input" AS STRING WITH VALUE "Working on Kanban Board"
+STORE "todolist" AS STRING WITH VALUE "to_do_list"
+STORE "doinglist" AS STRING WITH VALUE "doing_list"
+STORE "donelist" AS STIRNG WITH VALUE "done_list"
+STORE "check" AS STRING WITH VALUE "Work Is Done"
+STORE "revised" AS BOOLEAN
+
+ADD "input" INTO "todolist"
+ADD "input" INTO "doinglist"
+
+IF "doing_list" IS DONE
+    "input" IS BEING REVIEWED
+    IF "revised" IS true
+        ADD "input" INTO "donelist"
+        DISPLAY "check"
+    ELSE 
+        DOING "input"
+ELSE "You Have to WORK"
