@@ -1,18 +1,20 @@
 STORE "input" AS STRING WITH VALUE "Working on Kanban Board"
-STORE "todolist" AS STRING WITH VALUE "to_do_list"
-STORE "doinglist" AS STRING WITH VALUE "doing_list"
-STORE "donelist" AS STIRNG WITH VALUE "done_list"
+STORE "todolist" AS ARRAYS OF STRING WITH VALUE input
+STORE "doinglist" AS ARRAYS OF STRING WITH VALUE " "
+STORE "donelist" AS ARRAYS OF STIRNG WITH VALUE " "
 STORE "check" AS STRING WITH VALUE "Work Is Done"
 STORE "revised" AS BOOLEAN
 
 ADD "input" INTO "todolist"
-ADD "input" INTO "doinglist"
+ADD "todolist" INTO "doinglist"
 
-IF "doing_list" IS DONE
-    "input" IS BEING REVIEWED
-    IF "revised" IS true
-        ADD "input" INTO "donelist"
-        DISPLAY "check"
-    ELSE 
-        DOING "input"
+IF "todolist" IS ADDED INTO "doinglist"
+    doinglist ADD = todolist
+        IF "doinglist" IS DONE
+            "input" IS BEING REVIEWED
+                IF "revised" IS false
+                    donelist ADD = doinglist
+                    DISPLAY "check"
+                ELSE 
+                     DOING "doinglist"
 ELSE "You Have to WORK"
